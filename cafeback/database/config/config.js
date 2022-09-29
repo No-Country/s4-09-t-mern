@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     username: 'root',
-    password: null,
+    password: 'ImSql33213.',
     database: 'cafeapp',
     host: 'localhost',
     dialect: 'mysql'
