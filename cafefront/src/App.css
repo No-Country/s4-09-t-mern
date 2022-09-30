@@ -1,5 +1,14 @@
-.App {
-  text-align: center;
+.App {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 100vh;
+}
+
+.leaflet-container {
+  width: 50vw;
+  height: 50vh;  
 }
 
 .App-logo {
