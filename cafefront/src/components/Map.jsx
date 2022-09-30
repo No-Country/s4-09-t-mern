@@ -14,6 +14,13 @@ export const Map = () => {
         icon={MarkerIcon}
         position={[-34.6036, -58.38265]}>
         <Popup>
+          Subway. <br /> El mejor sandwich.
+        </Popup>
+      </Marker>
+      <Marker 
+        icon={MarkerIcon}
+        position={[-34.6037, -58.38385]}>
+        <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
