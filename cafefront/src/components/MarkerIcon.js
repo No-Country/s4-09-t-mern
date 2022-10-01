@@ -1,10 +1,12 @@
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
+import iconCoffee from '../assets/coffee41x41.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
+// Icon mide : 25 x 41
+
 export const MarkerIcon = L.icon({
-  iconUrl: icon,
+  iconUrl: iconCoffee,
   shadowUrl: iconShadow,
-  iconAnchor: [12, 41]
-  
+  iconAnchor: [20.5, 41]  
 });

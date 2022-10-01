@@ -2,28 +2,25 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import React from 'react'
 import 'leaflet/dist/leaflet.css';
 import {MarkerIcon} from './MarkerIcon';
+import {cafeterias} from './cafeterias';
 
 export const Map = () => {    
   return (
-    <MapContainer center={[-34.6037, -58.3816]} zoom={18} scrollWheelZoom={false}>
+    <MapContainer center={[-34.6037, -58.3816]} zoom={18} scrollWheelZoom={true}>
       <TileLayer
-        attribution='<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution=''
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      {cafeterias.map( (data) => 
       <Marker 
-        icon={MarkerIcon}
-        position={[-34.6036, -58.38265]}>
-        <Popup>
-          Subway. <br /> El mejor sandwich.
-        </Popup>
-      </Marker>
-      <Marker 
-        icon={MarkerIcon}
-        position={[-34.6037, -58.38385]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      icon={MarkerIcon}
+      position={data.position}>
+      <Popup>
+        <strong>{data.name}</strong> <br /> {data.motto} <br />
+        <a href="http://www.google.com" >Ver Cafeteria</a>
+      </Popup>
+    </Marker>      
+      )}     
     </MapContainer>
   )
 }
