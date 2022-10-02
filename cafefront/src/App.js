@@ -1,17 +1,13 @@
-import './App.css';
+import React from 'react'
+import './App.css'
+import { Map } from './components/Map'
 
-function App() {
+function App () {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="/goodmorning.jpg" alt="logo" style={{borderRadius: "10px"}}/>
-        <span style={{fontSize: "0.8rem"}}>Image by macrovector on Freepik</span>
-        <p>
-          CafeApp
-        </p> 
-      </header>
+      <Map />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
