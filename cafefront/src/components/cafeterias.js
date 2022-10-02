@@ -15,7 +15,7 @@ export const cafeterias = [
   },
   {
     id: 3,
-    name: 'Starbucks',
+    name: 'Cafe Starbucks',
     motto: 'Cafe para Vos',
     position: [-34.60342, -58.3788],
     icon: 'coffee'

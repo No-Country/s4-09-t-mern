@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import './styles.css'
 import { cafeterias as data } from './cafeterias'
@@ -14,6 +12,7 @@ export const SearchBar = ({ handlePosition }) => {
   const onSearch = (searchTerm) => {
     setValue(searchTerm)
     console.log('onSearch ', searchTerm)
+    setValue('')
   }
 
   const onSelect = (id) => {

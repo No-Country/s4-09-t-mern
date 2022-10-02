@@ -1,8 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-import { useMapEvents } from 'react-leaflet/hooks'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import 'leaflet/dist/leaflet.css'
 import { MarkerIcon } from './MarkerIcon'
 import { cafeterias } from './cafeterias'
@@ -16,11 +13,10 @@ const SetViewOnChange = (props) => {
 
 export const Map = () => {
   const [position, setPosition] = useState([-34.6037, -58.3816])
-  const [zoom, setZoom] = useState(18)
 
   return (
     <>
-      <MapContainer center={position} zoom={zoom} scrollWheelZoom={true}>
+      <MapContainer center={position} zoom={18} scrollWheelZoom={true}>
         <TileLayer
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
