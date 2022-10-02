@@ -3,8 +3,8 @@ const cors = require('cors')
 require('dotenv').config()
 const app = express()
 
-const Sentry = require('@sentry/node')
-const Tracing = require('@sentry/tracing')
+// const Sentry = require('@sentry/node')
+// const Tracing = require('@sentry/tracing')
 
 // Sentry.init({
 //   dsn: 'https://ee0f3e6de9e04fb789cd1825c6d42bd9@o1374728.ingest.sentry.io/6682196',
@@ -20,6 +20,7 @@ const Tracing = require('@sentry/tracing')
 // Routes import
 const root = require('./src/routes/root.routes')
 const user = require('./src/routes/user.routes')
+const shop = require('./src/routes/shop.routes')
 
 // const notFound = require('./src/middleware/notFound')
 // const handleError = require('./src/middleware/handleError')
@@ -29,7 +30,7 @@ const user = require('./src/routes/user.routes')
 // CORS: Permitir accesar desde un origen distinto
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:5000',
     // Credenciales
     credentials: true
   })
@@ -41,7 +42,8 @@ app.use(express.urlencoded({ extended: true }))
 require('./src/config/mongoose.config')
 
 app.use('/', root)
-app.use('/api/v1/user', user)
+app.use('/users', user)
+app.use('/shops', shop)
 
 
 // Error handling
