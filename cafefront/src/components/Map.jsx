@@ -7,16 +7,17 @@ import { SearchBar } from './SearchBar'
 
 const SetViewOnChange = (props) => {
   const m = useMap()
-  m.setView(props.position, m.getZoom(), { animate: true })
+  m.setView(props.position, props.zoom, { animate: true })
   return null
 }
 
 export const Map = () => {
   const [position, setPosition] = useState([-34.6037, -58.3816])
+  const [zoom, setZoom] = useState(18)
 
   return (
     <>
-      <MapContainer center={position} zoom={18} scrollWheelZoom={true}>
+      <MapContainer center={position} zoom={zoom} scrollWheelZoom={true}>
         <TileLayer
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,9 +30,9 @@ export const Map = () => {
             </Popup>
           </Marker>
         ))}
-        <SetViewOnChange position={position} />
+        <SetViewOnChange position={position} zoom={zoom} />
       </MapContainer>
-      <SearchBar handlePosition={setPosition} />
+      <SearchBar handlePosition={setPosition} handleZoom={setZoom}/>
     </>
   )
 }

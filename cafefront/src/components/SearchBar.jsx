@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './styles.css'
 import { cafeterias as data } from './cafeterias'
 
-export const SearchBar = ({ handlePosition }) => {
+export const SearchBar = ({ handlePosition, handleZoom }) => {
   const [value, setValue] = useState('')
 
   const onChange = (event) => {
@@ -20,6 +20,7 @@ export const SearchBar = ({ handlePosition }) => {
     setValue(item.name)
     console.log('onSelect ', item.name)
     handlePosition(item.position)
+    handleZoom(18)
     console.log('position ', item.position)
   }
 
