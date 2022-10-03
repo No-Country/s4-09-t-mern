@@ -1,8 +1,8 @@
 .search-bar {
     position: absolute;
     z-index: 1005;
-    top: 10px;    
-    left: 80px;            
+    top: 65px;    
+    left: 90px;            
 }
 
 .search-container {

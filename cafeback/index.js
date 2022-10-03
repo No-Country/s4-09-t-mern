@@ -30,7 +30,7 @@ const shop = require('./src/routes/shop.routes')
 // CORS: Permitir accesar desde un origen distinto
 app.use(
   cors({
-    origin: 'http://localhost:5000',
+    origin: 'http://localhost:3000',
     // Credenciales
     credentials: true
   })
@@ -44,7 +44,6 @@ require('./src/config/mongoose.config')
 app.use('/', root)
 app.use('/users', user)
 app.use('/shops', shop)
-
 
 // Error handling
 // app.use(notFound)
