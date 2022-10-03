@@ -2,8 +2,9 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import React, { useState } from 'react'
 import 'leaflet/dist/leaflet.css'
 import { MarkerIcon } from './MarkerIcon'
-import { cafeterias } from './cafeterias'
+// import { cafeterias } from './cafeterias'
 import { SearchBar } from './SearchBar'
+import useAxios from '../hooks/useAxios'
 
 const SetViewOnChange = (props) => {
   const m = useMap()
@@ -14,6 +15,20 @@ const SetViewOnChange = (props) => {
 export const Map = () => {
   const [position, setPosition] = useState([-34.6037, -58.3816])
   const [zoom, setZoom] = useState(18)
+  const [response, setResponse] = useState(null)
+
+  const result = useAxios({
+    url: 'http://localhost:5000/shops/',
+    method: 'get'
+  })
+
+  if (
+    result.loading === false &&
+    result.response !== null &&
+    response === null
+  ) {
+    setResponse(result.response)
+  }
 
   return (
     <>
@@ -22,17 +37,28 @@ export const Map = () => {
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {cafeterias.map((data) => (
-          <Marker key={data.id} icon={MarkerIcon} position={data.position}>
-            <Popup>
-              <strong>{data.name}</strong> <br /> {data.motto} <br />
-              <a href="http://www.google.com">Ver Cafeteria</a>
-            </Popup>
-          </Marker>
-        ))}
+        {response &&
+          response.map((data) => (
+            <Marker
+              key={data._id}
+              icon={MarkerIcon}
+              position={[data.lat, data.long]}
+            >
+              <Popup>
+                <strong>{data.name}</strong> <br /> {data.email} <br />
+                <a href="http://www.google.com">Ver Cafeteria</a>
+              </Popup>
+            </Marker>
+          ))}
         <SetViewOnChange position={position} zoom={zoom} />
       </MapContainer>
-      <SearchBar handlePosition={setPosition} handleZoom={setZoom}/>
+      {response && (
+        <SearchBar
+          data={response}
+          handlePosition={setPosition}
+          handleZoom={setZoom}
+        />
+      )}
     </>
   )
 }
