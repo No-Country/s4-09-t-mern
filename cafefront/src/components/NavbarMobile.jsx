@@ -1,42 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavbarMobile = () => {
   return (
     <div className="row">
-      <nav class="navbar navbar-dark bg-dark fixed-top navbar_desktop">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-dark bg-dark fixed-top navbar_desktop">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             tu cafe.
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar"
             aria-controls="offcanvasDarkNavbar"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            class="offcanvas offcanvas-end text-bg-dark"
-            tabindex="-1"
+            className="offcanvas offcanvas-end text-bg-dark"
+            tabIndex="-1"
             id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel"
           >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
                 Tu cafe.
               </h5>
               <button
                 type="button"
-                class="btn-close btn-close-white"
+                className="btn-close btn-close-white"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">
-              <nav class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+            <div className="offcanvas-body">
+              <nav className="navbar-nav justify-content-end flex-grow-1 pe-3 ">
                 <Link to="inicio" className="btn btn-outline-primary">
                   Inicio
                 </Link>
@@ -47,14 +47,14 @@ const NavbarMobile = () => {
                   Login
                 </Link>
               </nav>
-              <form class="d-flex" role="search">
+              <form className="d-flex" role="search">
                 <input
-                  class="form-control me-2"
+                  className="form-control me-2"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button class="btn btn-success" type="submit">
+                <button className="btn btn-success" type="submit">
                   Search
                 </button>
               </form>
@@ -63,7 +63,7 @@ const NavbarMobile = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default NavbarMobile;
+export default NavbarMobile

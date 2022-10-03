@@ -1,11 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-
-const NavBarDesktop = () => { 
+const NavBarDesktop = () => {
   return (
     <div className="row">
- 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container ">
           <Link to="/" className="btn btn-outline-primary">
@@ -20,7 +18,7 @@ const NavBarDesktop = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default NavBarDesktop;
+export default NavBarDesktop

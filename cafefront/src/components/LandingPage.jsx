@@ -1,15 +1,14 @@
-import Header from "./Header";
-import SectionMap from "./SectionMap";
+import React from 'react'
+import Header from './Header'
+import SectionMap from './SectionMap'
 
 const LandingPage = () => {
   return (
     <div className="container">
-   
       <Header />
       <SectionMap />
-    
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage
