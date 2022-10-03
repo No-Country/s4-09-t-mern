@@ -4,7 +4,7 @@ import SectionMap from './SectionMap'
 
 const LandingPage = () => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Header />
       <SectionMap />
     </div>

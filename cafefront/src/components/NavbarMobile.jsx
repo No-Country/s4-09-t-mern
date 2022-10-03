@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const NavbarMobile = () => {
   return (
     <div className="row">
-      <nav className="navbar navbar-dark bg-dark fixed-top navbar_desktop">
+      <nav className="navbar navbar-dark bg-dark navbar_desktop">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             tu cafe.

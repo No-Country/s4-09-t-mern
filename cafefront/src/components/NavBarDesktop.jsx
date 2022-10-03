@@ -5,7 +5,7 @@ const NavBarDesktop = () => {
   return (
     <div className="row">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container ">
+        <div className="container">
           <Link to="/" className="btn btn-outline-primary">
             Inicio
           </Link>
