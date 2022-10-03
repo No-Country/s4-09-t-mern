@@ -1,5 +1,5 @@
-const { User, validateUser } = require('../models/users')
-const { Article } = require('../models/articles')
+const { User, validateUser } = require('../models/user.model.js')
+
 
 module.exports.createUserController = async (req, res, next) => {
   const { err } = validateUser(req.body)

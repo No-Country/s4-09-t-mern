@@ -3,22 +3,21 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 
 const userSchema = new Schema({
-  id: {
+  firstName: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
-  bio: {
+  lastName: {
     type: String,
-    default: ''
+    required: true
   },
-  favorites: {
-    type: [Schema.Types.ObjectId],
-    default: []
+  email: {
+    type: String,
+    required: true 
   },
-  writings: {
-    type: [Schema.Types.ObjectId],
-    default: []
+  password: {
+    type: String,
+    required: true
   }
 }, { timestamps: true, versionKey: false })
 
