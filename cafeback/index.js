@@ -21,6 +21,7 @@ const app = express()
 const root = require('./src/routes/root.routes')
 const user = require('./src/routes/user.routes')
 const shop = require('./src/routes/shop.routes')
+const comment = require('./src/routes/comment.routes')
 
 // const notFound = require('./src/middleware/notFound')
 // const handleError = require('./src/middleware/handleError')
@@ -44,7 +45,7 @@ require('./src/config/mongoose.config')
 app.use('/', root)
 app.use('/users', user)
 app.use('/shops', shop)
-
+app.use('/comments', comment)
 
 // Error handling
 // app.use(notFound)
@@ -53,7 +54,8 @@ app.use('/shops', shop)
 // app.use(Sentry.Handlers.errorHandler())
 // app.use(handleError)
 
-const port = process.env.PORT
+// const port = process.env.PORT
+const port = 5000
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
   // console.log(listEndpoints(app))

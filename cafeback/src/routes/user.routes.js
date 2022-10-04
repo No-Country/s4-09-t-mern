@@ -7,7 +7,7 @@ const router = express.Router()
 // const addUserToAuth0 = require('../middleware/addUserToAuth0')
 
 router.get('/', (req, res) => {
-    res.status(200).send('user routes')
+  res.status(200).send('user routes')
 })
 
 // router.post('/', checkJwt, addUserToAuth0, createUserController)

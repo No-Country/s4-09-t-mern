@@ -28,9 +28,9 @@ const shopSchema = new Schema({
     default: 0
   },
   lat: {
-    type: Number ,
+    type: Number,
     default: 0
-  },
+  }
 }, { timestamps: true, versionKey: false })
 
-exports.Shop = mongoose.model('Shop', shopSchema);
+exports.Shop = mongoose.model('Shop', shopSchema)
