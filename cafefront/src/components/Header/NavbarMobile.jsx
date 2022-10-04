@@ -43,8 +43,11 @@ const NavbarMobile = () => {
                 <Link to="ranking" className="btn btn-outline-primary">
                   Ranking
                 </Link>
-                <Link to="Login" className="btn btn-outline-primary">
+                <Link to="login" className="btn btn-outline-primary">
                   Login
+                </Link>
+                <Link to="register" className="btn btn-outline-primary">
+                  Register
                 </Link>
               </nav>
               <form className="d-flex" role="search">

@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import { MarkerIcon } from './MarkerIcon'
 // import { cafeterias } from './cafeterias'
 import { SearchBar } from '../SearchBar/SearchBar'
+import { NotFound } from '../SearchBar/NotFound'
 import useAxios from '../../hooks/useAxios'
 import './styles.css'
 
@@ -60,6 +61,7 @@ export const Map = () => {
           handleZoom={setZoom}
         />
       )}
+      {!response && <NotFound />}
     </>
   )
 }

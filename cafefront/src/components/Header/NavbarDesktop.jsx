@@ -11,10 +11,10 @@ const NavbarDesktop = () => {
         <Link to="ranking" className="nav-link">
           Ranking
         </Link>
-        <Link to="Login" className="nav-link">
+        <Link to="login" className="nav-link">
           Login
         </Link>
-        <Link to="Register" className="nav-link">
+        <Link to="register" className="nav-link">
           Register
         </Link>
       </div>
