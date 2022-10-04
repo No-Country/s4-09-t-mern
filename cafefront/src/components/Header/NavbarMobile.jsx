@@ -7,7 +7,7 @@ const NavbarMobile = () => {
       <nav className="navbar navbar-dark bg-dark navbar_desktop">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            tu cafe.
+            CafeApp
           </a>
           <button
             className="navbar-toggler"

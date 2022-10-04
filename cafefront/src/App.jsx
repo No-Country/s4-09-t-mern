@@ -1,7 +1,7 @@
 import React, { Route, Routes } from 'react-router-dom'
 import './App.css'
-import LandingPage from './components/LandingPage'
-import Ranking from './Link.jsx/Ranking'
+import LandingPage from './pages/LandingPage/LandingPage'
+import Ranking from './pages/Ranking/Ranking'
 
 function App () {
   return (
