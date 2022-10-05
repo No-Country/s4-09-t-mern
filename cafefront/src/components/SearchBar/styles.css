@@ -35,6 +35,7 @@
     border: 1px solid var(--marron-claro);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+    padding-left: 1rem;
   }
 .search-inner input:focus-within {
   outline: 0px solid var(--marron);
