@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 import 'leaflet/dist/leaflet.css'
 import { MarkerIcon } from './MarkerIcon'
 // import { cafeterias } from './cafeterias'
-import { SearchBar } from './SearchBar'
-import useAxios from '../hooks/useAxios'
+import { SearchBar } from '../SearchBar/SearchBar'
+import { NotFound } from '../SearchBar/NotFound'
+import useAxios from '../../hooks/useAxios'
+import './styles.css'
 
 const SetViewOnChange = (props) => {
   const m = useMap()
@@ -59,6 +61,7 @@ export const Map = () => {
           handleZoom={setZoom}
         />
       )}
+      {!response && <NotFound />}
     </>
   )
 }

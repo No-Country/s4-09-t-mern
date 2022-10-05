@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBarDesktop from './NavBarDesktop'
+import NavBarDesktop from './NavbarDesktop'
 import NavbarMobile from './NavbarMobile'
 
 const Header = () => {
