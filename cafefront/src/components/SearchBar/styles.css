@@ -1,0 +1,65 @@
+.search-bar {
+    position: absolute;
+    z-index: 1005;
+    top: 65px;    
+    left: 90px;            
+}
+
+.search-container {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown {
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--beige);
+  }
+
+  .dropdown:empty {
+    border: none;
+  }
+  
+  .dropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 1px 0;
+  }
+  
+.search-inner input {
+    width: 220px;
+    padding: 5px;    
+    font-size: 1rem;
+    border: 1px solid var(--marron-claro);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 1rem;
+  }
+.search-inner input:focus-within {
+  outline: 0px solid var(--marron);
+}
+.search-inner button {
+    font-size: 1rem;
+    border: 0px solid var(--marron-claro);
+    background-color: var(--marron-claro);
+    outline: 0px solid var(--marron-claro);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+  
+  .search-inner {
+    display: flex;
+  }
+
+.cafes-not-found {
+    position: absolute;
+    z-index: 1005;
+    top: 65px;    
+    left: 90px; 
+    color: var(--marron);
+    background-color: var(--marron-claro);
+    padding: 0.5rem;
+    border-radius: 10px;
+}

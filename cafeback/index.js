@@ -1,7 +1,7 @@
-const express = require('express')
-const cors = require('cors')
-require('dotenv').config()
-const app = express()
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+const app = express();
 
 // const Sentry = require('@sentry/node')
 // const Tracing = require('@sentry/tracing')
@@ -18,9 +18,10 @@ const app = express()
 // app.use(Sentry.Handlers.tracingHandler())
 
 // Routes import
-const root = require('./src/routes/root.routes')
-const user = require('./src/routes/user.routes')
-const shop = require('./src/routes/shop.routes')
+const root = require('./src/routes/root.routes');
+const user = require('./src/routes/user.routes');
+const auth = require('./src/routes/auth.routes');
+const shop = require('./src/routes/shop.routes');
 
 // const notFound = require('./src/middleware/notFound')
 // const handleError = require('./src/middleware/handleError')
@@ -32,17 +33,18 @@ app.use(
   cors({
     origin: 'http://localhost:3000',
     // Credenciales
-    credentials: true
+    credentials: true,
   })
-)
+);
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-require('./src/config/mongoose.config')
+require('./src/config/mongoose.config');
 
 app.use('/', root)
 app.use('/api/v1/user', user)
+app.use('/auth', auth)
 app.use('/shops', shop)
 
 // Error handling
@@ -52,8 +54,8 @@ app.use('/shops', shop)
 // app.use(Sentry.Handlers.errorHandler())
 // app.use(handleError)
 
-const port = process.env.PORT
+const port = process.env.PORT;
 app.listen(port, () => {
-  console.log(`Listening on port ${port}...`)
+  console.log(`Listening on port ${port}...`);
   // console.log(listEndpoints(app))
-})
+});

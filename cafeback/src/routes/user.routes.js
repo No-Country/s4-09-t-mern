@@ -3,6 +3,8 @@ const router = express.Router()
 
 const { createUserController, getUserById } = require('./../controllers/user.controller')
 
+
+
 router.get('/', (req, res) => {
   res.status(200).send('user routes')
 })

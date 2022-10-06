@@ -21,6 +21,17 @@ export const SearchBar = ({ data, handlePosition, handleZoom }) => {
     handlePosition([item.lat, item.long])
     handleZoom(18)
     console.log('position ', [item.lat, item.long])
+    setValue('')
+  }
+
+  const filteredData = () => {
+    return data.filter((item) => {
+      const searchTerm = value.toLowerCase()
+      const fullName = item.name.toLowerCase()
+      return (
+        searchTerm && fullName.includes(searchTerm)
+      )
+    })
   }
 
   return (
@@ -31,28 +42,25 @@ export const SearchBar = ({ data, handlePosition, handleZoom }) => {
           <button onClick={() => onSearch(value)}>Buscar</button>
         </div>
         <div className="dropdown">
-          {data
-            .filter((item) => {
-              const searchTerm = value.toLowerCase()
-              const fullName = item.name.toLowerCase()
-
-              return (
-                searchTerm &&
-                fullName.includes(searchTerm) &&
-                fullName !== searchTerm
-              )
-            })
-            .slice(0, 10)
-            .map((item) => (
-              <div
-                onClick={() => onSelect(item._id)}
-                className="dropdown-row"
-                key={item.name}
-              >
-                <span>{item.name} </span>
-                <span style={{ fontSize: '0.5rem' }}> ({item.long + '/' + item.lat})</span>
-              </div>
-            ))}
+          {filteredData().length > 0 &&
+            filteredData()
+              .slice(0, 10)
+              .map((item) => (
+                <div
+                  onClick={() => onSelect(item._id)}
+                  className="dropdown-row"
+                  key={item.name}
+                  style={{ marginLeft: '1rem' }}
+                >
+                  <span>{item.name} </span>
+                  <span style={{ fontSize: '0.5rem' }}>
+                    ({item.long + '/' + item.lat})
+                  </span>
+                </div>
+              ))}
+          {value.length > 0 && filteredData().length === 0 && (
+            <div style={{ marginLeft: '1rem' }}>No se encontraron cafes</div>
+          )}
         </div>
       </div>
     </div>
