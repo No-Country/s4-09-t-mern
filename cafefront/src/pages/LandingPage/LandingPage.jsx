@@ -4,10 +4,10 @@ import { Map } from '../../components/Map/Map'
 
 const LandingPage = () => {
   return (
-    <>
+    <div className='container'>
       <Header />
       <Map />
-    </>
+    </div>
   )
 }
 
