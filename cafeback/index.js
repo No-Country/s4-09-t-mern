@@ -42,7 +42,7 @@ app.use(express.urlencoded({ extended: true }))
 require('./src/config/mongoose.config')
 
 app.use('/', root)
-app.use('/users', user)
+app.use('/api/v1/user', user)
 app.use('/shops', shop)
 
 // Error handling

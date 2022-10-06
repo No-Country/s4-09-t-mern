@@ -21,12 +21,12 @@ const userSchema = new Schema({
   }
 }, { timestamps: true, versionKey: false })
 
-const validateUser = (user) => {
-  const schema = Joi.object({
-    id: Joi.string().required()
-  })
-  return schema.validate(user)
-}
+// const validateUser = (user) => {
+//   const schema = Joi.object({
+//     id: Joi.string().required()
+//   })
+//   return schema.validate(user)
+// }
 
 // userSchema.pre('save', function (next) {
 //   mongoose.models.User.findOne({ id: this.id }, function (err, results) {
@@ -40,4 +40,4 @@ const validateUser = (user) => {
 // })
 
 exports.User = mongoose.model('User', userSchema)
-exports.validateUser = validateUser
+// exports.validateUser = validateUser

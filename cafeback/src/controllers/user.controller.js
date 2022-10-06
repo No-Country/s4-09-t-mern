@@ -2,9 +2,9 @@ const { User, validateUser } = require('../models/user.model.js')
 
 
 module.exports.createUserController = async (req, res, next) => {
-  const { err } = validateUser(req.body)
-  if (err) return res.status(400).send(err.details[0].message)
-  else {
+  // const { err } = validateUser(req.body)
+  // if (err) return res.status(400).send(err.details[0].message)
+  // else {
     try {
       const user = new User(req.body)
       const newUser = await user.save()
@@ -12,7 +12,7 @@ module.exports.createUserController = async (req, res, next) => {
     } catch (err) {
       next(err)
     }
-  }
+  // }
 }
 
 module.exports.getUserById = (req, res, next) => {
