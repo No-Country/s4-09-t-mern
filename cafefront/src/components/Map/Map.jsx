@@ -1,38 +1,38 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-import React, { useState } from 'react'
-import 'leaflet/dist/leaflet.css'
-import { MarkerIcon } from './MarkerIcon'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import React, { useState } from "react";
+import "leaflet/dist/leaflet.css";
+import { MarkerIcon } from "./MarkerIcon";
 // import { cafeterias } from './cafeterias'
-import { SearchBar } from '../SearchBar/SearchBar'
-import useAxios from '../../hooks/useAxios'
-import './styles.css'
+import { SearchBar } from "../SearchBar/SearchBar";
+import useAxios from "../../hooks/useAxios";
+import "./styles.css";
 
 const SetViewOnChange = (props) => {
-  const m = useMap()
-  m.setView(props.position, props.zoom, { animate: true })
-  return null
-}
+  const m = useMap();
+  m.setView(props.position, props.zoom, { animate: true });
+  return null;
+};
 
 export const Map = () => {
-  const [position, setPosition] = useState([-34.6037, -58.3816])
-  const [zoom, setZoom] = useState(18)
-  const [response, setResponse] = useState(null)
+  const [position, setPosition] = useState([-34.6037, -58.3816]);
+  const [zoom, setZoom] = useState(18);
+  const [response, setResponse] = useState(null);
 
   const result = useAxios({
-    url: 'http://localhost:5000/shops/',
-    method: 'get'
-  })
+    url: "http://localhost:5000/shops/",
+    method: "get",
+  });
 
   if (
     result.loading === false &&
     result.response !== null &&
     response === null
   ) {
-    setResponse(result.response)
+    setResponse(result.response);
   }
 
   return (
-    <>
+    <div className="col-12">
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={true}>
         <TileLayer
           attribution=""
@@ -60,6 +60,6 @@ export const Map = () => {
           handleZoom={setZoom}
         />
       )}
-    </>
-  )
-}
+    </div>
+  );
+};

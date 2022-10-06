@@ -1,24 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import Icono from '../../../src/assets/images/cafeicon.jpg'
+import './Header.css'
 
 const NavbarDesktop = () => {
   return (
+    <div className='row'>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="navbar-nav mr-auto">
-        <Link to="/" className="nav-link">
-          Inicio
-        </Link>
-        <Link to="ranking" className="nav-link">
+    <div>
+        <NavLink to='/'>
+          <img src={Icono} className='Nav_icon'/>
+        </NavLink>
+        </div>
+      <div className="navbar-nav mr-auto Nav_header">
+        <div className='Nav_header'>
+        <NavLink to="ranking" className="nav-link">
           Ranking
-        </Link>
-        <Link to="Login" className="nav-link">
+        </NavLink>
+        <NavLink to="Login" className="nav-link">
           Login
-        </Link>
-        <Link to="Register" className="nav-link">
+        </NavLink>
+        <NavLink to="Register" className="nav-link">
           Register
-        </Link>
+        </NavLink>
+        </div>
       </div>
     </nav>
+    </div>
   )
 }
 

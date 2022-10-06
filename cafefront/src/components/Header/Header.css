@@ -1,0 +1,15 @@
+.Nav_icon{
+    width: 80px;
+    border-radius: 40%;
+    -webkit-border-radius: 12%;
+    -moz-border-radius: 40%;
+    -ms-border-radius: 40%;
+    -o-border-radius: 40%;
+}
+.Nav_header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
