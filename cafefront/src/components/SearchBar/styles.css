@@ -1,12 +1,12 @@
 .search-bar {
     position: absolute;
     z-index: 1005;
-    top: 65px;    
-    left: 90px;            
+    top: 10px;    
+    left: 60px;          
 }
 
 .search-container {
-    width: 280px;
+    width: 200px;
     display: flex;
     flex-direction: column;
   }
@@ -29,9 +29,9 @@
   }
   
 .search-inner input {
-    width: 220px;
+    width: 200px;
     padding: 5px;    
-    font-size: 1rem;
+    font-size: 0.8rem;
     border: 1px solid var(--marron-claro);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -56,8 +56,8 @@
 .cafes-not-found {
     position: absolute;
     z-index: 1005;
-    top: 65px;    
-    left: 90px; 
+    top: 80px;    
+    left: 10px; 
     color: var(--marron);
     background-color: var(--marron-claro);
     padding: 0.5rem;
