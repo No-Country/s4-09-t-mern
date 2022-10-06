@@ -33,7 +33,7 @@ export const Map = () => {
   }
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={true}>
         <TileLayer
           attribution=""
@@ -62,6 +62,6 @@ export const Map = () => {
         />
       )}
       {!response && <NotFound />}
-    </>
+    </div>
   )
 }

@@ -3,9 +3,14 @@ import './Register.css'
 // import vaporIcon from "../../assets/images/vapor.svg"
 // import IconVapor from "../../components/IconVapor"
 import iconTazaCafe from '../../assets/images/taza-cafe.svg'
+import Header from '../../components/Header/Header'
 
 export default function Register () {
   return (
+    <div className='row'>
+      <div>
+        <Header/>
+      </div>
     <section className="register">
       <h1>Bienvenido</h1>
       <h2>
@@ -19,7 +24,7 @@ export default function Register () {
         </label>
         <label htmlFor="password">
           Contraseña
-          <input type="text" name="password" />
+          <input type="password" name="password" />
         </label>
         <button>Registrarme</button>
       </form>
@@ -31,5 +36,6 @@ export default function Register () {
         <a href="/login">Inicia sesion</a>
       </p>
     </section>
+    </div>
   )
 }
