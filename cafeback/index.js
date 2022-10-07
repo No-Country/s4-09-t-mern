@@ -18,10 +18,11 @@ const app = express();
 // app.use(Sentry.Handlers.tracingHandler())
 
 // Routes import
-const root = require('./src/routes/root.routes');
-const user = require('./src/routes/user.routes');
-const auth = require('./src/routes/auth.routes');
-const shop = require('./src/routes/shop.routes');
+const root = require('./src/routes/root.routes')
+const user = require('./src/routes/user.routes')
+const shop = require('./src/routes/shop.routes')
+const comment = require('./src/routes/comment.routes')
+const shop = require('./src/routes/shop.routes')
 
 // const notFound = require('./src/middleware/notFound')
 // const handleError = require('./src/middleware/handleError')
@@ -47,6 +48,7 @@ app.use('/api/v1/user', user)
 app.use('/auth', auth)
 app.use('/shops', shop)
 
+
 // Error handling
 // app.use(notFound)
 
@@ -54,7 +56,7 @@ app.use('/shops', shop)
 // app.use(Sentry.Handlers.errorHandler())
 // app.use(handleError)
 
-const port = process.env.PORT;
+const port = process.env.PORT
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
   // console.log(listEndpoints(app))
