@@ -1,4 +1,7 @@
-<h1 align="center">A la vuelta del mejor Café</h1>
+<h1 align="center">Cafe Reviewer</h1>
+<h3 align="center">A la vuelta del mejor Café</h3>
+
+<br> <br/>
 
 ## Sobre el Proyecto
 [![Current Version](https://img.shields.io/badge/version-1.0-green.svg)](https://github.com/No-Country/s4-09-t-mern) 
