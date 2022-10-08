@@ -1,12 +1,17 @@
-import React from 'react'
-import SocialMedia from './SocialMedia'
+import React from "react";
+import Logo from "./Logo";
+import SocialMedia from "./SocialMedia";
+import './Footer.css'
 
 const Footer = () => {
   return (
-    <div>
-      <SocialMedia/>
+    <div className="row">
+      <div className="col-12 footer_icon">
+        <Logo />
+        <SocialMedia />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
