@@ -32,7 +32,7 @@ export const Map = () => {
   }
 
   return (
-    <div className="col-12">
+    <div className="row justify-content-md-center">
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={true}>
         <TileLayer
           attribution=""
