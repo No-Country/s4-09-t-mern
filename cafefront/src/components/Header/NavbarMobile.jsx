@@ -1,14 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import Icono from '../../../src/assets/images/cafeicon.jpg'
+import './Header.css'
 
 const NavbarMobile = () => {
   return (
     <div className="row">
       <nav className="navbar navbar-dark bg-dark navbar_desktop">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            CafeApp
-          </a>
+          <NavLink to='/'>
+          <img src={Icono} alt='cafeterias' className='Nav_iconMobile'/>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -26,31 +28,31 @@ const NavbarMobile = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                Tu cafe.
+                Menu
               </h5>
               <button
                 type="button"
-                className="btn-close btn-close-white"
+                className="btn-close btn-close-dark"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
             <div className="offcanvas-body">
-              <nav className="navbar-nav justify-content-end flex-grow-1 pe-3 ">
-                <Link to="inicio" className="btn btn-outline-primary">
+              <nav className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <NavLink to="/" className="btn btn-outline-dark mt-2">
                   Inicio
-                </Link>
-                <Link to="ranking" className="btn btn-outline-primary">
+                </NavLink>
+                {/* <NavLink to="/ranking" className="btn btn-outline-dark mt-2">
                   Ranking
-                </Link>
-                <Link to="login" className="btn btn-outline-primary">
+                </NavLink>
+                <NavLink to="/Login" className="btn btn-outline-dark mt-2">
                   Login
-                </Link>
-                <Link to="register" className="btn btn-outline-primary">
-                  Register
-                </Link>
+                </NavLink> */}
+                <NavLink to="/Register" className="btn btn-outline-dark mt-2">
+                Register
+                </NavLink>
               </nav>
-              <form className="d-flex" role="search">
+              {/* <form className="d-flex mt-3" role="search">
                 <input
                   className="form-control me-2"
                   type="search"
@@ -60,7 +62,7 @@ const NavbarMobile = () => {
                 <button className="btn btn-success" type="submit">
                   Search
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>

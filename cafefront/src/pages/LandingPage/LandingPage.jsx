@@ -4,10 +4,14 @@ import { Map } from '../../components/Map/Map'
 
 const LandingPage = () => {
   return (
-    <>
-      <Header />
-      <Map />
-    </>
+    <div className="container-fluid p-0">
+      <div className="row">
+        <div>
+          <Header />
+        </div>
+        <Map />
+      </div>
+    </div>
   )
 }
 
