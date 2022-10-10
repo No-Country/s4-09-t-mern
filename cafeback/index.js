@@ -3,6 +3,12 @@ const cors = require('cors');
 require('dotenv').config();
 const app = express();
 
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
+require('./src/config/mongoose.config');
+
+
 // const Sentry = require('@sentry/node')
 // const Tracing = require('@sentry/tracing')
 
@@ -22,7 +28,6 @@ const root = require('./src/routes/root.routes')
 const user = require('./src/routes/user.routes')
 const shop = require('./src/routes/shop.routes')
 const comment = require('./src/routes/comment.routes')
-const shop = require('./src/routes/shop.routes')
 
 // const notFound = require('./src/middleware/notFound')
 // const handleError = require('./src/middleware/handleError')
@@ -41,11 +46,8 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-require('./src/config/mongoose.config');
-
 app.use('/', root)
 app.use('/api/v1/user', user)
-app.use('/auth', auth)
 app.use('/shops', shop)
 
 
