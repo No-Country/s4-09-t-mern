@@ -20,6 +20,7 @@ export default function Register () {
         ...prevDataForm
       }
       newDataForm[e.target.name] = e.target.value
+      console.log(newDataForm)
       return newDataForm
     })
   }
@@ -27,7 +28,8 @@ export default function Register () {
   const handleSubmit = (e) => {
     e.preventDefault()
     setStateForm({ loading: true, error: false })
-    axios.post('http://localhost:5000/api/v1/user/register', stateForm)
+    console.log(dataForm)
+    axios.post('http://localhost:5000/api/v1/user/register', dataForm)
       .then(res => {
         setStateForm({ loading: false, error: false })
         console.log(res)

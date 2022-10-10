@@ -24,7 +24,7 @@ export default function Login () {
   const handleSubmit = (e) => {
     e.preventDefault()
     setStateForm({ loading: true, error: false })
-    axios.post('http://localhost:5000/api/v1/user/login', stateForm)
+    axios.post('http://localhost:5000/api/v1/user/login', dataForm)
       .then(res => {
         setStateForm({ loading: false, error: false })
         console.log(res)
