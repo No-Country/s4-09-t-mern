@@ -1,0 +1,7 @@
+.leaflet-container {
+  width: 100%;
+  height: calc(100vh - 4rem);  
+  margin: 0;
+  padding: 0;
+
+}

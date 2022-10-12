@@ -1,5 +1,26 @@
+:root{
+  /* colores principales */
+  --celeste: rgb(134, 166, 181);
+  --agua: rgb(190, 215, 215);
+  --verde: rgb(72, 131, 118);
+  --marron: rgb(70, 46, 25);
+  --marron-claro: rgb(184, 171, 148);
+  --beige: rgb(222, 210, 188);
+  --blanco: rgb(255, 255, 255);
+
+  /* sombras */
+  --sombra-marron-claro:  rgb(158, 147, 126);
+}
+
+@font-face {
+  font-family: 'Bartons';
+  src: url("./assets/fonts/New\ Bartons\ Demo.otf");
+  font-style: bold;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

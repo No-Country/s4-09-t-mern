@@ -1,0 +1,106 @@
+.login{
+  font-family: 'Roboto';
+  background-color: var(--agua);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: 2rem;
+  width: 100%;
+}
+
+.form-login{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+  width: 360px;
+  max-width: 100%;
+}
+
+.login > h1, .login > h2 {
+  font-family: 'Bartons';
+  font-size: 65px;
+  margin: 0;
+  text-shadow: .8px  0px 0px var(--blanco),
+    0px  .8px 0px var(--blanco),
+   -.8px  0px 0px var(--blanco),
+    0px -.8px 0px var(--blanco);
+  color: var(--marron-claro);
+  font-weight: bold;
+}
+
+.login > h2 {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: flex-start;
+}
+
+.login .icon-vapor{
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  filter: 
+    drop-shadow(.1px 0px 0px var(--blanco))
+    drop-shadow(0px .1px 0px var(--blanco))
+    drop-shadow(-.1px 0px 0px var(--blanco))
+    drop-shadow(0px -.1px 0px var(--blanco))
+  ;
+}
+
+.login .form-login label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  gap: 3px;
+  color: var(--marron);
+  font-weight: bold;
+}
+
+.login .form-login input {
+  border: 1px solid var(--marron-claro);
+  border-radius: 11px;
+  height: 25px;
+  padding: 6px;
+}
+
+.login .form-login input:focus {
+  outline: none;
+  border: 1px solid var(--verde);
+  border-radius: 11px;
+}
+
+.login .form-login button {
+  font-size: 15px;
+  font-weight: 600;
+  background-color: var(--marron-claro);
+  color: var(--blanco);
+  border: 1px solid transparent;
+  border-radius: 11px;
+  height: 45px;
+  box-shadow: 
+    0px 3px 0px 3px  var(--sombra-marron-claro),
+    0px 8px 8px -1px gray
+  ;
+  transition: box-shadow 30ms linear ;
+
+}
+
+.login .form-login button:active {
+  transition: box-shadow 30ms linear ;
+  padding-top: 5px;
+  box-shadow: 
+    0px 2px 0px 2px  var(--sombra-marron-claro),
+    0px 6px 8px -1px gray,
+    inset 0px 4px 8px -1px  rgba(0,0,0, 0.3) 
+  ;
+}
+
+.login a {
+  text-decoration: none;
+  color: var(--verde);
+}
