@@ -3,6 +3,7 @@ import './Login.css'
 import iconTazaCafe from '../../assets/images/taza-cafe.svg'
 import Header from '../../components/Header/Header'
 import axios from 'axios'
+import { useUserStore } from '../../redux/hooks/useUser'
 
 export default function Login () {
   const [dataForm, setDataForm] = useState({
@@ -10,6 +11,8 @@ export default function Login () {
     password: ''
   })
   const [stateForm, setStateForm] = useState({ loading: false, error: false })
+  // eslint-disable-next-line no-unused-vars
+  const { user, setUser } = useUserStore()
 
   const handleChange = (e) => {
     setDataForm((prevDataForm) => {
@@ -27,6 +30,7 @@ export default function Login () {
     axios.post('http://localhost:5000/api/v1/user/login', dataForm)
       .then(res => {
         setStateForm({ loading: false, error: false })
+        setUser(dataForm.email)
         console.log(res)
       })
       .catch(error => {

@@ -3,6 +3,7 @@ import './Register.css'
 import iconTazaCafe from '../../assets/images/taza-cafe.svg'
 import Header from '../../components/Header/Header'
 import axios from 'axios'
+import { useUserStore } from '../../redux/hooks/useUser'
 
 export default function Register () {
   const [dataForm, setDataForm] = useState({
@@ -13,6 +14,8 @@ export default function Register () {
     confirmPassword: ''
   })
   const [stateForm, setStateForm] = useState({ loading: false, error: false })
+  // eslint-disable-next-line no-unused-vars
+  const { user, setUser } = useUserStore()
 
   const handleChange = (e) => {
     setDataForm((prevDataForm) => {
@@ -33,6 +36,7 @@ export default function Register () {
       .then(res => {
         setStateForm({ loading: false, error: false })
         console.log(res)
+        setUser(dataForm.email)
       })
       .catch(error => {
         setStateForm({ loading: false, error: true })
