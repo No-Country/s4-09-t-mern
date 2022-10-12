@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { list, getById, create, update, deleteShop } = require('../controllers/shop.controller')
+const { list, getById, create, update, deleteComment } = require('../controllers/comment.controller.js')
 
 router.get('/', list)
 
@@ -11,6 +11,6 @@ router.post('/', create)
 
 router.patch('/:id', update)
 
-router.delete('/:id', deleteShop)
+router.delete('/:id', deleteComment)
 
 module.exports = router

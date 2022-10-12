@@ -1,16 +1,16 @@
-.register{
+.login{
   font-family: 'Roboto';
   background-color: var(--agua);
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  max-height: 120vh;
+  flex-wrap: wrap;
+  height: 100vh;
   padding: 2rem;
   width: 100%;
 }
 
-.form-register{
+.form-login{
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -19,7 +19,7 @@
   max-width: 100%;
 }
 
-.register > h1, .register > h2 {
+.login > h1, .login > h2 {
   font-family: 'Bartons';
   font-size: 65px;
   margin: 0;
@@ -31,7 +31,7 @@
   font-weight: bold;
 }
 
-.register > h2 {
+.login > h2 {
   font-size: 28px;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@
   justify-content: flex-start;
 }
 
-.register .icon-vapor{
+.login .icon-vapor{
   width: 30px;
   height: 30px;
   margin-bottom: 10px;
@@ -51,7 +51,7 @@
   ;
 }
 
-.register .form-register label {
+.login .form-login label {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -61,20 +61,20 @@
   font-weight: bold;
 }
 
-.register .form-register input {
+.login .form-login input {
   border: 1px solid var(--marron-claro);
   border-radius: 11px;
   height: 25px;
   padding: 6px;
 }
 
-.register .form-register input:focus {
+.login .form-login input:focus {
   outline: none;
   border: 1px solid var(--verde);
   border-radius: 11px;
 }
 
-.register .form-register button {
+.login .form-login button {
   font-size: 15px;
   font-weight: 600;
   background-color: var(--marron-claro);
@@ -90,7 +90,7 @@
 
 }
 
-.register .form-register button:active {
+.login .form-login button:active {
   transition: box-shadow 30ms linear ;
   padding-top: 5px;
   box-shadow: 
@@ -100,7 +100,7 @@
   ;
 }
 
-.register a {
+.login a {
   text-decoration: none;
   color: var(--verde);
 }

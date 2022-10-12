@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
-import './Register.css'
+import './Login.css'
 import iconTazaCafe from '../../assets/images/taza-cafe.svg'
 import Header from '../../components/Header/Header'
 import axios from 'axios'
 
-export default function Register () {
+export default function Login () {
   const [dataForm, setDataForm] = useState({
     email: '',
-    firstName: '',
-    lastName: '',
-    password: '',
-    confirmPassword: ''
+    password: ''
   })
   const [stateForm, setStateForm] = useState({ loading: false, error: false })
 
@@ -20,7 +17,6 @@ export default function Register () {
         ...prevDataForm
       }
       newDataForm[e.target.name] = e.target.value
-      console.log(newDataForm)
       return newDataForm
     })
   }
@@ -28,8 +24,7 @@ export default function Register () {
   const handleSubmit = (e) => {
     e.preventDefault()
     setStateForm({ loading: true, error: false })
-    console.log(dataForm)
-    axios.post('http://localhost:5000/api/v1/user/register', dataForm)
+    axios.post('http://localhost:5000/api/v1/user/login', dataForm)
       .then(res => {
         setStateForm({ loading: false, error: false })
         console.log(res)
@@ -40,25 +35,17 @@ export default function Register () {
       })
   }
   return (
-    <div className='row' style={{ margin: 0 }}>
+    <>
       <div>
         <Header/>
       </div>
-    <section className="register">
+    <section className="login">
       <h1>Bienvenido</h1>
       <h2>
         Estas a la vuelta del mejor cafe
         <img src={iconTazaCafe} alt="taza de cafe" className="icon-vapor" />
       </h2>
-      <form className="form-register" onSubmit={handleSubmit}>
-        <label htmlFor="firstName">
-          Nombre
-          <input type="text" name="firstName" value={dataForm.firstName} onChange={handleChange}/>
-        </label>
-        <label htmlFor="lastName">
-          Apellido
-          <input type="text" name="lastName" value={dataForm.lastName} onChange={handleChange}/>
-        </label>
+      <form className="form-login" onSubmit={handleSubmit}>
         <label htmlFor="email">
           Correo
           <input type="text" name="email" value={dataForm.email} onChange={handleChange}/>
@@ -67,20 +54,16 @@ export default function Register () {
           Contraseña
           <input type="password" name="password" value={dataForm.password} onChange={handleChange}/>
         </label>
-        <label htmlFor="confirmPassword">
-          Confirma la contraseña
-          <input type="password" name="confirmPassword" value={dataForm.confirmPassword} onChange={handleChange}/>
-        </label>
-        <button>{stateForm.loading ? 'Cargando...' : 'Registrarme' }</button>
+        <button>{stateForm.loading ? 'Cargando...' : 'Iniciar Sesión' }</button>
       </form>
 
       <br />
       <br />
       <p>
-        ¿Ya tienes una cuenta?<span> </span>
-        <a href="/login">Inicia sesion</a>
+        ¿Aún no tienes una cuenta?<span> </span>
+        <a href="/register">Create una</a>
       </p>
     </section>
-    </div>
+    </>
   )
 }

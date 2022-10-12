@@ -28,7 +28,7 @@ const NavbarMobile = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                Tu cafe.
+                Menu
               </h5>
               <button
                 type="button"
@@ -42,14 +42,17 @@ const NavbarMobile = () => {
                 <NavLink to="/" className="btn btn-outline-dark mt-2">
                   Inicio
                 </NavLink>
-                <NavLink to="ranking" className="btn btn-outline-dark mt-2">
+                {/* <NavLink to="/ranking" className="btn btn-outline-dark mt-2">
                   Ranking
                 </NavLink>
-                <NavLink to="Login" className="btn btn-outline-dark mt-2">
+                <NavLink to="/Login" className="btn btn-outline-dark mt-2">
                   Login
+                </NavLink> */}
+                <NavLink to="/Register" className="btn btn-outline-dark mt-2">
+                Register
                 </NavLink>
               </nav>
-              <form className="d-flex mt-3" role="search">
+              {/* <form className="d-flex mt-3" role="search">
                 <input
                   className="form-control me-2"
                   type="search"
@@ -59,7 +62,7 @@ const NavbarMobile = () => {
                 <button className="btn btn-success" type="submit">
                   Search
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>

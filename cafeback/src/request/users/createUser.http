@@ -1,0 +1,10 @@
+POST http://localhost:5000/api/v1/user/register
+content-type: application/json
+
+{
+  "firstName": "kendny",
+  "lastName": "Luqude",
+	"email": "klasda@cddds.com",
+	"password": "RGfGDj&/($%GH1",
+  "confirmPassword": "RGfGDj&/($%GH1"
+}

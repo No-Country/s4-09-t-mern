@@ -1,7 +1,13 @@
-const express = require('express')
-const cors = require('cors')
-require('dotenv').config()
-const app = express()
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+const app = express();
+
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
+require('./src/config/mongoose.config');
+
 
 // const Sentry = require('@sentry/node')
 // const Tracing = require('@sentry/tracing')
@@ -21,6 +27,7 @@ const app = express()
 const root = require('./src/routes/root.routes')
 const user = require('./src/routes/user.routes')
 const shop = require('./src/routes/shop.routes')
+const comment = require('./src/routes/comment.routes')
 
 // const notFound = require('./src/middleware/notFound')
 // const handleError = require('./src/middleware/handleError')
@@ -32,18 +39,17 @@ app.use(
   cors({
     origin: 'http://localhost:3000',
     // Credenciales
-    credentials: true
+    credentials: true,
   })
-)
+);
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
-require('./src/config/mongoose.config')
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/', root)
-app.use('/users', user)
+app.use('/api/v1/user', user)
 app.use('/shops', shop)
+
 
 // Error handling
 // app.use(notFound)
@@ -54,6 +60,6 @@ app.use('/shops', shop)
 
 const port = process.env.PORT
 app.listen(port, () => {
-  console.log(`Listening on port ${port}...`)
+  console.log(`Listening on port ${port}...`);
   // console.log(listEndpoints(app))
-})
+});
