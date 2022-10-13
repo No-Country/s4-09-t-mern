@@ -1,16 +1,14 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import { Map } from '../../components/Map/Map'
 
 const LandingPage = () => {
   return (
-    <div className="container-fluid p-0">
-      <div className="row">
-        <div>
-          <Header />
-        </div>
-        <Map />
-      </div>
+    <div className='container'>
+      <Header />
+      <Map />
+      <Footer/>
     </div>
   )
 }
