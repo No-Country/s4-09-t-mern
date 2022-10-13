@@ -11,7 +11,7 @@ const Ranking = () => {
       <div>
         <Header />
       </div>
-      <h1>Ranking, mejores cafeterias</h1>
+      <h1 style={{color: 'white'}}>Ranking, mejores cafeterias</h1>
       <p> {message} </p>
     </div>
   )

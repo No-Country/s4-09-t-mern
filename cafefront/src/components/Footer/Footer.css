@@ -4,8 +4,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-content: center;
-    margin-top: 50px;
+    align-content: center;   
     background-color: #212529;
   
 }

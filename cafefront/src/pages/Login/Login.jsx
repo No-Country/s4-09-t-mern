@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Login.css'
 import iconTazaCafe from '../../assets/images/taza-cafe.svg'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import axios from 'axios'
 import { useUserStore } from '../../redux/hooks/useUser'
 
@@ -39,10 +40,11 @@ export default function Login () {
       })
   }
   return (
-    <>
+    <div className='row' style={{ margin: 0 }}>
       <div>
         <Header/>
       </div>
+    <div className="container">
     <section className="login">
       <h1>Bienvenido</h1>
       <h2>
@@ -68,6 +70,8 @@ export default function Login () {
         <a href="/register">Create una</a>
       </p>
     </section>
-    </>
+    <Footer />
+    </div>
+    </div>
   )
 }
