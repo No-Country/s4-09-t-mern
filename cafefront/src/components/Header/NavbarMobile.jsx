@@ -2,14 +2,22 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Icono from '../../../src/assets/images/cafeicon.jpg'
 import './Header.css'
+import { useUserStore } from '../../redux/hooks/useUser'
 
 const NavbarMobile = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { user, setUser } = useUserStore()
+
+  const handleLogout = () => {
+    setUser(null)
+  }
+
   return (
     <div className="row">
       <nav className="navbar navbar-dark bg-dark navbar_desktop">
         <div className="container-fluid">
-          <NavLink to='/'>
-          <img src={Icono} alt='cafeterias' className='Nav_iconMobile'/>
+          <NavLink to="/">
+            <img src={Icono} alt="cafeterias" className="Nav_iconMobile" />
           </NavLink>
           <button
             className="navbar-toggler"
@@ -42,16 +50,18 @@ const NavbarMobile = () => {
                 <NavLink to="/" className="btn btn-outline-dark mt-2">
                   Inicio
                 </NavLink>
-                {/* <NavLink to="/ranking" className="btn btn-outline-dark mt-2">
+                <NavLink to="/ranking" className="btn btn-outline-dark mt-2">
                   Ranking
                 </NavLink>
                 <NavLink to="/Login" className="btn btn-outline-dark mt-2">
                   Login
-                </NavLink> */}
+                </NavLink>
                 <NavLink to="/Register" className="btn btn-outline-dark mt-2">
-                Register
+                  Register
                 </NavLink>
               </nav>
+              <button className="btn" onClick={handleLogout} style={{ alignItems: 'center' }}>                Logout
+              </button>
               {/* <form className="d-flex mt-3" role="search">
                 <input
                   className="form-control me-2"

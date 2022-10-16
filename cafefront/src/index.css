@@ -9,7 +9,7 @@
   --blanco: rgb(255, 255, 255);
 
   /* sombras */
-  --sombra-marron-claro:  rgb(158, 147, 126);
+  --sombra-marron-claro:  rgb(158, 147, 126);  
 }
 
 @font-face {
@@ -26,6 +26,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(33, 37, 41);
 }
 
 code {

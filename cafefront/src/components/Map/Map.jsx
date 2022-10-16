@@ -34,7 +34,7 @@ export const Map = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <MapContainer center={position} zoom={zoom} scrollWheelZoom={true}>
+      <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
         <TileLayer
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
