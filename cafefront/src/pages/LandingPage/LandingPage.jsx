@@ -15,21 +15,24 @@ const LandingPage = () => {
           Cafeterías en Buenos Aires, Argentina
         </h4>
         <div className="row">
-          <div className="col" style={{ backgroundColor: 'white' }}>
+          <div className="col-md-8" style={{ backgroundColor: 'white' }}>            
             <Map />
           </div>
-          <div className="col">
+          <div className="col-md-4">            
             <CoffeeSelected numero={0} />
           </div>
         </div>
         <br />
         <h2 style={{ color: 'white' }}> Recomendadas para vos </h2>
         <div className="row">
-          <div className="col">
+          <div className="col-md-4">
             <CoffeeCards numero={0} />
           </div>
-          <div className="col">
+          <div className="col-md-4">
             <CoffeeCards numero={3} />
+          </div>
+          <div className="col-md-4">
+            <CoffeeCards numero={6} />
           </div>
         </div>
         <br />
@@ -45,11 +48,14 @@ const LandingPage = () => {
         <br />
         <h2 style={{ color: 'white' }}> Agregadas recientemente </h2>
         <div className="row">
-          <div className="col">
+          <div className="col-md-4">
             <CoffeeCards numero={6} />
           </div>
-          <div className="col">
+          <div className="col-md-4">
             <CoffeeCards numero={9} />
+          </div>
+          <div className="col-md-4">
+            <CoffeeCards numero={3} />
           </div>
         </div>
         <br />

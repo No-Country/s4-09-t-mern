@@ -28,13 +28,13 @@ export const CoffeeCards = ({ numero = 0 }) => {
     image12
   ]
   return (
-    <div className="card-column card-group">
+    <div className="card-column">
       <div className="card">
         <img
           style={{ objectFit: 'cover' }}
           className="card-img-top"
           src={imagenes[numero]}
-          height="150"
+          height="250"
           alt="Card cap"
         />
         <div className="card-body">
@@ -53,7 +53,7 @@ export const CoffeeCards = ({ numero = 0 }) => {
           style={{ objectFit: 'cover' }}
           className="card-img-top"
           src={imagenes[numero+1]}
-          height="150"
+          height="250"
           alt="Card cap"
         />
         <div className="card-body">
@@ -72,7 +72,7 @@ export const CoffeeCards = ({ numero = 0 }) => {
           style={{ objectFit: 'cover' }}
           className="card-img-top"
           src={imagenes[numero+2]}
-          height="150"
+          height="250"
           alt="Card cap"
         />
         <div className="card-body">
