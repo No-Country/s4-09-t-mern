@@ -20,7 +20,7 @@ const NavbarDesktop = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div>
           <NavLink to="/">
-            <img src={Icono} className="Nav_icon" />
+            <img src={Icono} className="Nav_icon" alt="Coffee App"/>
           </NavLink>
         </div>
         <div className="navbar-nav mr-auto Nav_header">
