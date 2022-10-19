@@ -49,7 +49,7 @@ export const CoffeeSelected = ({ numero = 0 }) => {
             Email: {shop[0].email} <br />            
           </p>}
           <p className="card-text">
-            <small className="text-muted">Last updated 3 mins ago</small>
+            <small className="text-muted">{" "}</small>
           </p>
         </div>
       </div>

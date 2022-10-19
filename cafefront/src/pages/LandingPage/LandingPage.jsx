@@ -10,10 +10,10 @@ const LandingPage = () => {
     <>
       <div className="container-fluid">
         <Header />
-        <h4 style={{ color: 'white' }}>
+        <h5 style={{ color: 'white' }}>
           {' '}
           Cafeterías en Buenos Aires, Argentina
-        </h4>
+        </h5>
         <div className="row">
           <div className="col-md-8" style={{ backgroundColor: 'white' }}>            
             <Map />
@@ -23,7 +23,7 @@ const LandingPage = () => {
           </div>
         </div>
         <br />
-        <h2 style={{ color: 'white' }}> Recomendadas para vos </h2>
+        <h5 style={{ color: 'white' }}> Recomendadas para vos </h5>
         <div className="row">
           <div className="col-md-4">
             <CoffeeCards numero={0} />
@@ -36,7 +36,7 @@ const LandingPage = () => {
           </div>
         </div>
         <br />
-        <h2 style={{ color: 'white' }}> Sponsors </h2>
+        <h5 style={{ color: 'white' }}> Sponsors </h5>
         <div className="row">
           <div className="col">
             <CoffeeSelected numero={10} />
@@ -46,7 +46,7 @@ const LandingPage = () => {
           </div>
         </div>
         <br />
-        <h2 style={{ color: 'white' }}> Agregadas recientemente </h2>
+        <h5 style={{ color: 'white' }}> Agregadas recientemente </h5>
         <div className="row">
           <div className="col-md-4">
             <CoffeeCards numero={6} />
@@ -59,7 +59,7 @@ const LandingPage = () => {
           </div>
         </div>
         <br />
-        <h2 style={{ color: 'white' }}> Porque fuiste a Cafe Pirulin </h2>
+        <h5 style={{ color: 'white' }}> Porque fuiste a Cafe Pirulin </h5>
         <div className="row">
           <div className="col">
             <CoffeeCards numero={0} />

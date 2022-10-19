@@ -17,7 +17,7 @@ const SetViewOnChange = (props) => {
 
 export const Map = () => {
   const [position, setPosition] = useState([-34.6037, -58.3816])
-  const [zoom, setZoom] = useState(18)  
+  const [zoom, setZoom] = useState(18)
 
   const { shop, setShop } = useShopStore()
 
@@ -28,7 +28,7 @@ export const Map = () => {
 
   React.useEffect(() => {
     if (result.loading === false) {
-      if (result.response !== null) {                
+      if (result.response !== null) {
         setShop(result.response)
       }
     }
@@ -37,7 +37,7 @@ export const Map = () => {
   //
 
   return (
-    <div style={{ position: 'relative', top: '5%' }}>
+    <div style={{ position: 'relative' }}>
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
         <TileLayer
           attribution=""
@@ -51,8 +51,10 @@ export const Map = () => {
               position={[data.lat, data.long]}
             >
               <Popup>
-                <strong>{data.name}</strong> <br /> {data.email} <br />
-                <a href="http://www.google.com">Ver Cafeteria</a>
+                <strong>Nombre:</strong> {data.name} <br />
+                <strong>Telefono:</strong> {data.phone} <br />
+                <strong>Email: </strong>{data.email} <br />
+                <strong>Direccion: </strong>{data.address} <br />
               </Popup>
             </Marker>
           ))}

@@ -46,10 +46,7 @@ export const CoffeeCards = ({ numero = 0 }) => {
             Direccion: {shop[0].address}  <br />
             Telefono: {shop[0].phone}  <br />
             Email: {shop[0].email} <br />            
-          </p>}
-          <p className="card-text">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </p>
+          </p>}          
         </div>
       </div>
       <br />
@@ -67,10 +64,7 @@ export const CoffeeCards = ({ numero = 0 }) => {
             Direccion: {shop[0].address}  <br />
             Telefono: {shop[0].phone}  <br />
             Email: {shop[0].email} <br />            
-          </p>}
-          <p className="card-text">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </p>
+          </p>}          
         </div>
       </div>
       <br />
@@ -88,10 +82,7 @@ export const CoffeeCards = ({ numero = 0 }) => {
             Direccion: {shop[0].address}  <br />
             Telefono: {shop[0].phone}  <br />
             Email: {shop[0].email} <br />            
-          </p>}
-          <p className="card-text">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </p>
+          </p>}          
         </div>
       </div>
     </div>
