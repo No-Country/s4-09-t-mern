@@ -5,9 +5,9 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className="row">
+    <div className="container-flex m-2">
       <div className="col-12 footer_icon">
-        <Logo />
+        <Logo style={{ borderRadius: '5%'}}/>
         <SocialMedia />
       </div>
     </div>

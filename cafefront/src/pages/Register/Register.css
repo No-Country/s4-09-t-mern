@@ -104,3 +104,9 @@
   text-decoration: none;
   color: var(--verde);
 }
+
+.error {    
+  color: var(--error);
+  font-size: 14px;
+  margin: 0 auto;
+}

@@ -33,7 +33,7 @@ export const Map = () => {
   }
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative', top:'5%'}}>
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
         <TileLayer
           attribution=""
