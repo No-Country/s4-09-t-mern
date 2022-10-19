@@ -19,7 +19,7 @@ export const Map = () => {
   const [position, setPosition] = useState([-34.6037, -58.3816])
   const [zoom, setZoom] = useState(18)
 
-  const { shop, setShop } = useShopStore()
+  const { shop, setSelected, setShop } = useShopStore()
 
   const result = useAxios({
     url: 'http://localhost:5000/shops/',
@@ -47,14 +47,22 @@ export const Map = () => {
           shop.map((data) => (
             <Marker
               key={data._id}
+              data={data._id}
               icon={MarkerIcon}
               position={[data.lat, data.long]}
+              eventHandlers={{
+                click: (e) => {
+                  console.log('shop id:', e.target.options.data)
+                }
+              }}
             >
               <Popup>
                 <strong>Nombre:</strong> {data.name} <br />
                 <strong>Telefono:</strong> {data.phone} <br />
-                <strong>Email: </strong>{data.email} <br />
-                <strong>Direccion: </strong>{data.address} <br />
+                <strong>Email: </strong>
+                {data.email} <br />
+                <strong>Direccion: </strong>
+                {data.address} <br />
               </Popup>
             </Marker>
           ))}
