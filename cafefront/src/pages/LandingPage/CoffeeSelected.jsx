@@ -12,7 +12,10 @@ import image10 from '../../assets/cafeterias/cafeteria10.jpg'
 import image11 from '../../assets/cafeterias/cafeteria11.jpg'
 import image12 from '../../assets/cafeterias/cafeteria12.jpg'
 
+import { useShopStore } from '../../redux/hooks/useShop'
+
 export const CoffeeSelected = ({ numero = 0 }) => {
+  const { shop, setShop } = useShopStore()
   let imagenes = [
     image1,
     image2,
@@ -39,10 +42,12 @@ export const CoffeeSelected = ({ numero = 0 }) => {
           alt="Card cap"
         />
         <div className="card-body">
-          <h5 className="card-title">Cafeteria</h5>
-          <p className="card-text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia culpa iste minus aut dolor eos quas labore blanditiis modi voluptatibus, alias est maxime, amet laudantium itaque officia nobis commodi voluptatem in nulla autem at nam! Libero nesciunt commodi voluptas perferendis fugit asperiores sapiente, nihil beatae neque quod eveniet doloremque porro.            
-          </p>
+          {shop && <h5 className="card-title">{shop[0].name}</h5>}
+          {shop && <p className="card-text">
+            Direccion: {shop[0].address}  <br />
+            Telefono: {shop[0].phone}  <br />
+            Email: {shop[0].email} <br />            
+          </p>}
           <p className="card-text">
             <small className="text-muted">Last updated 3 mins ago</small>
           </p>

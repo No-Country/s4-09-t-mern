@@ -11,6 +11,7 @@ import image9 from '../../assets/cafeterias/cafeteria9.jpg'
 import image10 from '../../assets/cafeterias/cafeteria10.jpg'
 import image11 from '../../assets/cafeterias/cafeteria11.jpg'
 import image12 from '../../assets/cafeterias/cafeteria12.jpg'
+import { useShopStore } from '../../redux/hooks/useShop'
 
 export const CoffeeCards = ({ numero = 0 }) => {
   let imagenes = [
@@ -27,6 +28,8 @@ export const CoffeeCards = ({ numero = 0 }) => {
     image11,
     image12
   ]
+  const { shop, setShop } = useShopStore()
+
   return (
     <div className="card-column">
       <div className="card">
@@ -38,10 +41,12 @@ export const CoffeeCards = ({ numero = 0 }) => {
           alt="Card cap"
         />
         <div className="card-body">
-          <h5 className="card-title">Cafeteria</h5>
-          <p className="card-text">
-          Cafeteria muy cerca de tu casa...
-          </p>
+          {shop && <h5 className="card-title">{shop[0].name}</h5>}
+          {shop && <p className="card-text">
+            Direccion: {shop[0].address}  <br />
+            Telefono: {shop[0].phone}  <br />
+            Email: {shop[0].email} <br />            
+          </p>}
           <p className="card-text">
             <small className="text-muted">Last updated 3 mins ago</small>
           </p>
@@ -57,10 +62,12 @@ export const CoffeeCards = ({ numero = 0 }) => {
           alt="Card cap"
         />
         <div className="card-body">
-          <h5 className="card-title">Cafeteria</h5>
-          <p className="card-text">
-            Cafeteria muy cerca de tu casa...
-          </p>
+          {shop && <h5 className="card-title">{shop[0].name}</h5>}
+          {shop && <p className="card-text">
+            Direccion: {shop[0].address}  <br />
+            Telefono: {shop[0].phone}  <br />
+            Email: {shop[0].email} <br />            
+          </p>}
           <p className="card-text">
             <small className="text-muted">Last updated 3 mins ago</small>
           </p>
@@ -76,10 +83,12 @@ export const CoffeeCards = ({ numero = 0 }) => {
           alt="Card cap"
         />
         <div className="card-body">
-          <h5 className="card-title">Cafeteria</h5>
-          <p className="card-text">
-          Cafeteria muy cerca de tu casa...
-          </p>
+        {shop && <h5 className="card-title">{shop[0].name}</h5>}
+        {shop && <p className="card-text">
+            Direccion: {shop[0].address}  <br />
+            Telefono: {shop[0].phone}  <br />
+            Email: {shop[0].email} <br />            
+          </p>}
           <p className="card-text">
             <small className="text-muted">Last updated 3 mins ago</small>
           </p>
