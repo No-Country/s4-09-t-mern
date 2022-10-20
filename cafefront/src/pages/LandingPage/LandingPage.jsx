@@ -52,50 +52,20 @@ const LandingPage = () => {
         </div>
         <br />
         <h5 style={{ color: 'white' }}> Recomendadas para vos </h5>
-        <div className="row">
-          <div className="col-md-4">
-            <CoffeeCards numero={0} />
-          </div>
-          <div className="col-md-4">
-            <CoffeeCards numero={3} />
-          </div>
-          <div className="col-md-4">
-            <CoffeeCards numero={6} />
-          </div>
+        <div className="row">          
+            <CoffeeCards tipo={0}/>                  
         </div>
-        <br />
-        <h5 style={{ color: 'white' }}> Sponsors </h5>
-        <div className="row">
-          <div className="col">
-            <CoffeeSelected />
-          </div>
-          <div className="col">
-            <CoffeeSelected />
-          </div>
-        </div>
-        <br />
+        <br />        
         <h5 style={{ color: 'white' }}> Agregadas recientemente </h5>
-        <div className="row">
-          <div className="col-md-4">
-            <CoffeeCards numero={6} />
-          </div>
-          <div className="col-md-4">
-            <CoffeeCards numero={9} />
-          </div>
-          <div className="col-md-4">
-            <CoffeeCards numero={3} />
-          </div>
+        <div className="row">          
+            <CoffeeCards tipo={1}/>                  
         </div>
         <br />
-        <h5 style={{ color: 'white' }}> Porque fuiste a Cafe Pirulin </h5>
-        <div className="row">
-          <div className="col">
-            <CoffeeCards numero={0} />
-          </div>
-          <div className="col">
-            <CoffeeCards numero={3} />
-          </div>
+        <h5 style={{ color: 'white' }}> Porque fuiste a Cafe Pirulin </h5>        
+        <div className="row">          
+            <CoffeeCards tipo={2}/>                  
         </div>
+        <br />
       </div>
       <div>
         <Footer />

@@ -1,90 +1,57 @@
-import React from 'react'
-import image1 from '../../assets/cafeterias/cafeteria1.jpg'
-import image2 from '../../assets/cafeterias/cafeteria2.jpg'
-import image3 from '../../assets/cafeterias/cafeteria3.jpg'
-import image4 from '../../assets/cafeterias/cafeteria4.jpg'
-import image5 from '../../assets/cafeterias/cafeteria5.jpg'
-import image6 from '../../assets/cafeterias/cafeteria6.jpg'
-import image7 from '../../assets/cafeterias/cafeteria7.jpg'
-import image8 from '../../assets/cafeterias/cafeteria8.jpg'
-import image9 from '../../assets/cafeterias/cafeteria9.jpg'
-import image10 from '../../assets/cafeterias/cafeteria10.jpg'
-import image11 from '../../assets/cafeterias/cafeteria11.jpg'
-import image12 from '../../assets/cafeterias/cafeteria12.jpg'
 import { useShopStore } from '../../redux/hooks/useShop'
 
-export const CoffeeCards = ({ numero = 0 }) => {
-  let imagenes = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image9,
-    image10,
-    image11,
-    image12
-  ]
-  const { shop, setShop } = useShopStore()
+const filtros = [
+[
+  // recomendados para vos
+  '635084407dd48c30b29a956a',  
+  '635082597dd48c30b29a954c',
+  '6339e6012f86593e6e0c0aa9',
+],
+[
+  // recientemente agregados  
+  '635087507dd48c30b29a95a6',
+  '635086457dd48c30b29a9592',
+  '635086007dd48c30b29a958e' 
+],
+[
+  // Porque fuiste a cafe pirulin
+  '6339e6012f86593e6e0c0aa9',
+  '635088a97dd48c30b29a95c4',
+  '635082597dd48c30b29a954c'
+]
+]
+
+export const CoffeeCards = ({tipo}) => {
+  const { shop } = useShopStore()
+
+ const filteredShops = () => {  
+  return shop.filter(element => filtros[tipo].includes(element._id)) 
+ }
 
   return (
-    <div className="card-column">
-      <div className="card">
-        <img
-          style={{ objectFit: 'cover' }}
-          className="card-img-top"
-          src={imagenes[numero]}
-          height="250"
-          alt="Card cap"
-        />
-        <div className="card-body">
-          {shop && <h5 className="card-title">{shop[0].name}</h5>}
-          {shop && <p className="card-text">
-            Direccion: {shop[0].address}  <br />
-            Telefono: {shop[0].phone}  <br />
-            Email: {shop[0].email} <br />            
-          </p>}          
-        </div>
-      </div>
-      <br />
-      <div className="card">
-        <img
-          style={{ objectFit: 'cover' }}
-          className="card-img-top"
-          src={imagenes[numero+1]}
-          height="250"
-          alt="Card cap"
-        />
-        <div className="card-body">
-          {shop && <h5 className="card-title">{shop[0].name}</h5>}
-          {shop && <p className="card-text">
-            Direccion: {shop[0].address}  <br />
-            Telefono: {shop[0].phone}  <br />
-            Email: {shop[0].email} <br />            
-          </p>}          
-        </div>
-      </div>
-      <br />
-      <div className="card">
-        <img
-          style={{ objectFit: 'cover' }}
-          className="card-img-top"
-          src={imagenes[numero+2]}
-          height="250"
-          alt="Card cap"
-        />
-        <div className="card-body">
-        {shop && <h5 className="card-title">{shop[0].name}</h5>}
-        {shop && <p className="card-text">
-            Direccion: {shop[0].address}  <br />
-            Telefono: {shop[0].phone}  <br />
-            Email: {shop[0].email} <br />            
-          </p>}          
-        </div>
-      </div>
+    <div className="row">
+      {shop &&
+        filteredShops(shop).map(item => (          
+          <div className="col-md-4" key={item._id}>
+            <div className="card">
+              <img
+                style={{ objectFit: 'cover' }}
+                className="card-img-top"
+                src={require('../../assets/cafeterias/' + item.image)}
+                height="250"
+                alt="Card cap"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{item.name}</h5>
+                <p className="card-text">
+                  {item.address} <br />
+                  Tel: {item.phone} <br />
+                  {item.email} <br />
+                </p>
+              </div>
+            </div>            
+          </div>
+        ))}
     </div>
   )
 }
