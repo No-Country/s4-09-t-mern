@@ -1,24 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { onSetShop, onSetSelected } from '../slices'
+import { onSetShop, onSetSelectedById } from '../slices'
 
 export const useShopStore = () => {
-  const { shop, selected } = useSelector((state) => state.shop)
+  const { shop, shopId, shopSelected } = useSelector((state) => state.shop)
   const dispatch = useDispatch()
 
   const setShop = (data) => {
     dispatch(onSetShop(data))
   }
 
-  const setSelected = (data) => {
-    dispatch(onSetSelected(data))
+  const setSelectedById = (data) => {
+    dispatch(onSetSelectedById(data))
   }
 
   return {
     //* Propiedades
     shop,
-    selected,
+    shopId,
+    shopSelected,
     //* Métodos
     setShop,
-    setSelected
+    setSelectedById,
   }
 }

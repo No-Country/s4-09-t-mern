@@ -15,11 +15,11 @@ const LandingPage = () => {
           Cafeterías en Buenos Aires, Argentina
         </h5>
         <div className="row">
-          <div className="col-md-8" style={{ backgroundColor: 'white' }}>            
+          <div className="col-md-6">            
             <Map />
           </div>
-          <div className="col-md-4">            
-            <CoffeeSelected numero={0} />
+          <div className="col-md-6">            
+            <CoffeeSelected />
           </div>
         </div>
         <br />
@@ -39,10 +39,10 @@ const LandingPage = () => {
         <h5 style={{ color: 'white' }}> Sponsors </h5>
         <div className="row">
           <div className="col">
-            <CoffeeSelected numero={10} />
+            <CoffeeSelected />
           </div>
           <div className="col">
-            <CoffeeSelected numero={11} />
+            <CoffeeSelected />
           </div>
         </div>
         <br />

@@ -19,7 +19,7 @@ export const Map = () => {
   const [position, setPosition] = useState([-34.6037, -58.3816])
   const [zoom, setZoom] = useState(18)
 
-  const { shop, setSelected, setShop } = useShopStore()
+  const { shop, shopId, setSelectedById, setShop } = useShopStore()
 
   const result = useAxios({
     url: 'http://localhost:5000/shops/',
@@ -37,7 +37,7 @@ export const Map = () => {
   //
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative' }}>      
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
         <TileLayer
           attribution=""
@@ -51,23 +51,20 @@ export const Map = () => {
               icon={MarkerIcon}
               position={[data.lat, data.long]}
               eventHandlers={{
-                click: (e) => {
-                  console.log('shop id:', e.target.options.data)
+                click: (e) => {                  
+                  setSelectedById(e.target.options.data)
                 }
               }}
             >
               <Popup>
-                <strong>Nombre:</strong> {data.name} <br />
-                <strong>Telefono:</strong> {data.phone} <br />
-                <strong>Email: </strong>
-                {data.email} <br />
+                <strong>Nombre:</strong> {data.name} <br />                
                 <strong>Direccion: </strong>
-                {data.address} <br />
+                {data.address} <br />                
               </Popup>
             </Marker>
           ))}
         <SetViewOnChange position={position} zoom={zoom} />
-      </MapContainer>
+      </MapContainer>      
       {shop && (
         <SearchBar
           data={shop}

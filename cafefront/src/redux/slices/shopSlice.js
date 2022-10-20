@@ -1,20 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 
 export const shopSlice = createSlice({
   name: 'shop',
   initialState: {
     shop: null,
-    selected: 0,
+    shopId: null,
+    shopSelected: null,
   },
   reducers: {
     onSetShop (state, action) {
-      state.shop = action.payload
+      state.shop = action.payload     
     },
-    onSetSelected (state, action)
+    onSetSelectedById (state, action)
     {
-      state.selected = action.payload
-    }
+      state.shopId = action.payload      
+      state.shopSelected = state.shop.find( c => (action.payload === c._id))      
+    },
+    
   }
 })
 
-export const { onSetShop, onSetSelected } = shopSlice.actions
+export const { onSetShop, onSetSelectedById } = shopSlice.actions
