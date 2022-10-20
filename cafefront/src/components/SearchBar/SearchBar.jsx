@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './styles.css'
+import { useShopStore } from '../../redux/hooks/useShop'
 
 export const SearchBar = ({ data, handlePosition, handleZoom }) => {
   const [value, setValue] = useState('')
+  const { setSelectedById } = useShopStore()
 
   const onChange = (event) => {
     setValue(event.target.value)
@@ -22,6 +24,7 @@ export const SearchBar = ({ data, handlePosition, handleZoom }) => {
     handleZoom(18)
     console.log('position ', [item.lat, item.long])
     setValue('')
+    setSelectedById(id)
   }
 
   const filteredData = () => {
