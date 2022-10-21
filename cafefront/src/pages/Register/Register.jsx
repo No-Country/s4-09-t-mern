@@ -56,7 +56,7 @@ export default function Register() {
     setStateForm({ loading: true, error: false })
     const { email, firstName, lastName, password, confirmPassword } = values
     axios
-      .post('http://localhost:5000/api/v1/user/register', {
+      .post('https://cafereviewer.herokuapp.com/api/v1/user/register', {
         email,
         firstName,
         lastName,

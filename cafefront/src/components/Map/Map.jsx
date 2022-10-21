@@ -20,9 +20,9 @@ export const Map = () => {
   const [zoom, setZoom] = useState(18)
 
   const { shop, shopId, setSelectedById, setShop } = useShopStore()
-
+  
   const result = useAxios({
-    url: 'http://localhost:5000/shops/',
+    url: 'https://cafereviewer.herokuapp.com/shops/',
     method: 'get'
   })
 
