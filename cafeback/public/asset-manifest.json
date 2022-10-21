@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.49643aef.css",
-    "main.js": "/static/js/main.078ed218.js",
+    "main.js": "/static/js/main.25973843.js",
     "static/js/787.ffac3d17.chunk.js": "/static/js/787.ffac3d17.chunk.js",
     "static/media/cafeteria1.jpg": "/static/media/cafeteria1.e542a2cf7bd703c168bd.jpg",
     "static/media/cafeteria6.jpg": "/static/media/cafeteria6.ebb4329608cd65580303.jpg",
@@ -23,11 +23,11 @@
     "static/media/taza-cafe.svg": "/static/media/taza-cafe.a3840d3c37fed2d0f716745a873bf654.svg",
     "index.html": "/index.html",
     "main.49643aef.css.map": "/static/css/main.49643aef.css.map",
-    "main.078ed218.js.map": "/static/js/main.078ed218.js.map",
+    "main.25973843.js.map": "/static/js/main.25973843.js.map",
     "787.ffac3d17.chunk.js.map": "/static/js/787.ffac3d17.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49643aef.css",
-    "static/js/main.078ed218.js"
+    "static/js/main.25973843.js"
   ]
 }
