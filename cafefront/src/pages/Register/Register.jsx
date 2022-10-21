@@ -92,10 +92,11 @@ export default function Register() {
     <div className="row" style={{ margin: 0 }}>
       <div>
         <Header />
-      </div>
+      </div>      
       <div className="container">
         <section className="register">
           <h1>Bienvenido</h1>
+          
           <h2>
             Estas a la vuelta del mejor cafe
             <img src={iconTazaCafe} alt="taza de cafe" className="icon-vapor" />
