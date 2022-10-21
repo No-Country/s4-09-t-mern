@@ -1,65 +1,40 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const app = express();
+const express = require('express')
+const cors = require('cors')
+require('dotenv').config()
+const app = express()
 
-const cookieParser = require("cookie-parser");
-app.use(cookieParser());
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
 
-require('./src/config/mongoose.config');
+require('./src/config/mongoose.config')
 
-
-// const Sentry = require('@sentry/node')
-// const Tracing = require('@sentry/tracing')
-
-// Sentry.init({
-//   dsn: 'https://ee0f3e6de9e04fb789cd1825c6d42bd9@o1374728.ingest.sentry.io/6682196',
-//   integrations: [
-//     new Sentry.Integrations.Http({ tracing: true }),
-//     new Tracing.Integrations.Express({ app })
-//   ],
-//   tracesSampleRate: 1.0
-// })
-// app.use(Sentry.Handlers.requestHandler())
-// app.use(Sentry.Handlers.tracingHandler())
+// Directorio Público
+app.use(express.static('public'))
 
 // Routes import
 const root = require('./src/routes/root.routes')
 const user = require('./src/routes/user.routes')
 const shop = require('./src/routes/shop.routes')
+// eslint-disable-next-line no-unused-vars
 const comment = require('./src/routes/comment.routes')
 
-// const notFound = require('./src/middleware/notFound')
-// const handleError = require('./src/middleware/handleError')
-
-// const listEndpoints = require('express-list-endpoints')
-
-// CORS: Permitir accesar desde un origen distinto
 app.use(
   cors({
     origin: 'http://localhost:3000',
     // Credenciales
-    credentials: true,
+    credentials: true
   })
-);
+)
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.use('/', root)
 app.use('/api/v1/user', user)
 app.use('/shops', shop)
 
-
-// Error handling
-// app.use(notFound)
-
-// The error handler must be before any other error middleware and after all controllers
-// app.use(Sentry.Handlers.errorHandler())
-// app.use(handleError)
-
 const port = process.env.PORT
 app.listen(port, () => {
-  console.log(`Listening on port ${port}...`);
+  console.log(`Listening on port ${port}...`)
   // console.log(listEndpoints(app))
-});
+})
