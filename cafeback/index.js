@@ -9,7 +9,7 @@ app.use(cookieParser())
 require('./src/config/mongoose.config')
 
 // Directorio Público
-app.use(express.static('public'))
+// app.use(express.static('public'))
 
 // Routes import
 const root = require('./src/routes/root.routes')
