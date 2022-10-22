@@ -14,7 +14,7 @@ export default function Login() {
     password: ''
   }
 
-  const [stateForm, setStateForm] = useState({ loading: false, error: false }) 
+  const [stateForm, setStateForm] = useState({ loading: false, error: false })
   const { user, setUser } = useUserStore()
 
   const validationSchema = yup.object().shape({
@@ -33,7 +33,7 @@ export default function Login() {
     axios
       .post('http://localhost:5000/api/v1/user/login', { email, password })
       .then((res) => {
-        setStateForm({ loading: false, error: false })        
+        setStateForm({ loading: false, error: false })
         if (res.status === 200 && res.data.error !== true) setUser(email)
         else {
           setStateForm((p) => {
@@ -48,7 +48,7 @@ export default function Login() {
       })
       .catch((error) => {
         setStateForm({ loading: false, error: true })
-        setUser('')        
+        setUser('')
       })
   }
 
@@ -61,6 +61,7 @@ export default function Login() {
       <div>
         <Header />
       </div>
+
       <div className="container">
         <section className="login">
           <h1>Bienvenido</h1>
@@ -114,7 +115,21 @@ export default function Login() {
             <a href="/register">Create una</a>
           </p>
         </section>
-        <Footer />
+        <Footer style={{position: 'relative'}}>
+          <div id="container-cup">
+            <div className="steam" id="steam1"></div>
+            <div className="steam" id="steam2"></div>
+            <div className="steam" id="steam3"></div>
+            <div className="steam" id="steam4"></div>
+            <div id="cup">
+              <div id="cup-body">
+                <div id="cup-shade"></div>
+              </div>
+              <div id="cup-handle"></div>
+            </div>
+            <div id="saucer"></div>            
+          </div>          
+          </Footer>
       </div>
     </div>
   )
